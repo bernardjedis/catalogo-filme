@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
+/* font-family: 'Gayathri', sans-serif; */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #21527b;
+  color: #434343;
+  font-family: 'Saira', sans-serif;
+}
+
+header {
+  background: #032541;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 25px;
+  width: 100vw;
+}
+
+header h1 {
+  background: linear-gradient(to right, #8fcea1, #01b3e4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 36px;
+  letter-spacing: 1px;
+  line-height: 36px;
+  margin: 0;
+}
+
+.busca {
+  background-color: transparent;
+  border: 2px solid #01b3e4;
+  border-radius: 10px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .busca {
+    width: 100%;
+  }
+}
+
+.busca::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.busca:focus {
+  border-color: #8fcea1;
+  outline: none;
+}
+
+#main {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.filme {
+  align-items: center;
+  background: #fff;
+  border: 2px solid #01b3e4;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 15px;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+}
+
+.filme:hover {
+  border-color: #8fcea1;
+}
+
+.filme img {
+  width: 100%;
+}
+
+.filme .info {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  width: 100%;
+}
+
+.filme .info h3 {
+  display: block;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.filme .info span {
+  background: #22254b;
+  border-radius: 5px;
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  padding: 5px 10px;
+}
+
+.sinopse {
+  background-color: #fff;
+  padding: 18px;
+  position: absolute;
+  max-height: 100%;
+  overflow: auto;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in;
+}
+
+.sinopse h3 {
+  margin-top: 0;
+}
+
+.filme:hover .sinopse {
+  transform: translateY(0);
+}
