@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 html {
   background: #21527b;
   color: #434343;
@@ -20,8 +24,18 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  left: 0;
   padding: 25px;
+  position: fixed;
+  top: 0;
+  transition: all linear 0.25s;
   width: 100vw;
+  z-index: 3;
+}
+
+header.active {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  padding: 15px 25px;
 }
 
 header h1 {
@@ -31,7 +45,35 @@ header h1 {
   font-size: 36px;
   letter-spacing: 1px;
   line-height: 36px;
+  transition: all linear 0.25s;
   margin: 0;
+}
+
+header.active h1 {
+  font-size: 26px;
+  line-height: 26px;
+}
+
+header .buttons button {
+  background-color: transparent;
+  border: 2px solid #01b3e4;
+  border-radius: 10px;
+  color: #01b3e4;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 0.5rem 1rem;
+  transition: all linear 0.25s;
+}
+
+header.active .buttons button {
+  padding: 0.25rem 0.5rem;
+}
+
+header .buttons button:hover {
+  background: #01b3e4;
+  color: #fff;
 }
 
 .busca {
@@ -42,6 +84,11 @@ header h1 {
   font-family: inherit;
   font-size: 18px;
   padding: 0.5rem 1rem;
+  transition: all linear 0.25s;
+}
+
+header.active .busca {
+  font-size: 12px;
 }
 
 @media screen and (max-width: 768px) {
@@ -69,6 +116,7 @@ header h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 100px;
   width: 100%;
 }
 
@@ -118,6 +166,16 @@ header h1 {
   padding: 5px 10px;
 }
 
+.filme .info span.vermelho {
+  color: #e55454;
+}
+.filme .info span.laranja {
+  color: orange;
+}
+.filme .info span.verde {
+  color: #4ac74a;
+}
+
 .sinopse {
   background-color: #fff;
   padding: 18px;
@@ -137,4 +195,68 @@ header h1 {
 
 .filme:hover .sinopse {
   transform: translateY(0);
+}
+
+/* MODAL */
+#modal {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  width: 100vw;
+  z-index: 4;
+}
+
+#modal.show {
+  display: flex;
+}
+
+.modal-content {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  position: relative;
+}
+
+.modal-content #fechar {
+  background-color: #21527b;
+  border-radius: 50%;
+  color: #fff;
+  display: block;
+  height: 25px;
+  line-height: 25px;
+  position: absolute;
+  right: 20px;
+  text-align: center;
+  top: 20px;
+  width: 25px;
+}
+
+.modal-content img {
+  border-radius: 10px;
+  max-width: 275px;
+}
+
+.modal-content .text {
+  margin-left: 20px;
+  width: 500px;
+}
+
+.modal-content .text h2 {
+  display: block;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 10px;
+}
+
+.modal-content .text #overview {
+  display: block;
+  margin-top: 20px;
 }
